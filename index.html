@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For Raveena ❤️</title>
     <style>
         /* Import fonts */
@@ -41,14 +41,13 @@
             margin: 0.5em 0;
         }
 
-        /* Animated heart icon */
+        /* Heart icon with heartbeat animation */
         .heart {
             font-size: 5rem;
             animation: heartbeat 1.5s infinite;
-            margin: 1em 0;
+            margin: 1em;
         }
 
-        /* Heartbeat animation */
         @keyframes heartbeat {
             0% {
                 transform: scale(1);
@@ -60,6 +59,32 @@
 
             100% {
                 transform: scale(1);
+            }
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Rotate animation (if needed) */
+        .rotate {
+            animation: rotateAnim 5s linear infinite;
+        }
+
+        @keyframes rotateAnim {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
             }
         }
 
@@ -92,31 +117,35 @@
             border-radius: 20px;
             margin-top: 20px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            position: relative;
             font-size: 1.4rem;
             animation: fadeIn 3s ease-in-out;
         }
 
-        /* Animated couple (if you want to add one later) */
-        .animated-couple {
-            width: 150px;
-            position: absolute;
-            bottom: 30px;
-            left: -100px;
-            animation: walkAcross 8s linear infinite;
+        /* Container for heart and GIFs placed side by side */
+        .heart-gif-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
         }
 
-        @keyframes walkAcross {
-            0% {
-                left: -120px;
-            }
-
-            100% {
-                left: 100%;
-            }
+        /* GIF styles */
+        .gif-programmer,
+        .gif-doctor {
+            width: 120px;
+            margin: 0 10px;
         }
 
-        /* Floating hearts container */
+        .gif-programmer img,
+        .gif-doctor img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* Floating Hearts Animation */
         .floating-hearts {
             position: absolute;
             top: 0;
@@ -126,7 +155,7 @@
             pointer-events: none;
         }
 
-        .floating-hearts div {
+        .floating-heart {
             position: absolute;
             bottom: 0;
             width: 25px;
@@ -149,7 +178,7 @@
             }
         }
 
-        /* Fireworks animation for celebration */
+        /* Fireworks Animation for Celebration */
         .fireworks {
             position: absolute;
             top: 50%;
@@ -174,52 +203,7 @@
             }
         }
 
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Content wrapper that adjusts to text size */
-        .content-wrapper {
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Decorative line */
-        .decorative-line {
-            width: 80%;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.5);
-            margin: 20px auto;
-        }
-
-        /* Additional animations */
-        .rotate {
-            animation: rotateAnim 5s linear infinite;
-        }
-
-        @keyframes rotateAnim {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Particle effect background simulation */
+        /* Particle Background Animation */
         .particles {
             position: absolute;
             top: 0;
@@ -253,82 +237,8 @@
             }
         }
 
-        .particles span:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .particles span:nth-child(2) {
-            left: 20%;
-            animation-delay: 1s;
-        }
-
-        .particles span:nth-child(3) {
-            left: 30%;
-            animation-delay: 2s;
-        }
-
-        .particles span:nth-child(4) {
-            left: 40%;
-            animation-delay: 3s;
-        }
-
-        .particles span:nth-child(5) {
-            left: 50%;
-            animation-delay: 4s;
-        }
-
-        .particles span:nth-child(6) {
-            left: 60%;
-            animation-delay: 5s;
-        }
-
-        .particles span:nth-child(7) {
-            left: 70%;
-            animation-delay: 6s;
-        }
-
-        .particles span:nth-child(8) {
-            left: 80%;
-            animation-delay: 7s;
-        }
-
-        .particles span:nth-child(9) {
-            left: 90%;
-            animation-delay: 8s;
-        }
-
-        .particles span:nth-child(10) {
-            left: 95%;
-            animation-delay: 9s;
-        }
-
-        /* GIF styles for programmer and doctor */
-        .gif-programmer {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 120px;
-            z-index: 10;
-        }
-
-        .gif-doctor {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 120px;
-            z-index: 10;
-        }
-
         /* Mobile responsiveness */
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-                flex-direction: column;
-            }
-
             h1 {
                 font-size: 2.5rem;
                 margin: 0.5em 0;
@@ -350,242 +260,17 @@
                 font-size: 1.2rem;
             }
 
-            .animated-couple {
-                width: 100px;
-                bottom: 20px;
-                left: -80px;
-                animation: walkAcross 10s linear infinite;
-            }
-
             .gif-programmer,
             .gif-doctor {
                 width: 80px;
+                margin: 0 5px;
+            }
+
+            .heart {
+                font-size: 3.5rem;
+                margin: 0 5px;
             }
         }
-
-        /* Extra dummy CSS to reach over 500 lines */
-        .extra-style-1 {
-            color: #ffcccb;
-        }
-
-        .extra-style-2 {
-            background: #fff;
-        }
-
-        .extra-style-3 {
-            border: 2px solid #000;
-        }
-
-        .extra-style-4 {
-            margin: 10px;
-            padding: 10px;
-        }
-
-        .extra-style-5 {
-            font-size: 1rem;
-        }
-
-        .extra-style-6 {
-            text-align: left;
-        }
-
-        .extra-style-7 {
-            text-transform: uppercase;
-        }
-
-        .extra-style-8 {
-            letter-spacing: 2px;
-        }
-
-        .extra-style-9 {
-            line-height: 1.5;
-        }
-
-        .extra-style-10 {
-            word-spacing: 4px;
-        }
-
-        .dummy-block-1 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .dummy-block-2 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .dummy-block-3 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .dummy-block-4 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .dummy-block-5 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .dummy-block-6 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .dummy-block-7 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .dummy-block-8 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .dummy-block-9 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        .dummy-block-10 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 1);
-        }
-
-        .dummy-block-11 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.1);
-        }
-
-        .dummy-block-12 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.2);
-        }
-
-        .dummy-block-13 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.3);
-        }
-
-        .dummy-block-14 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.4);
-        }
-
-        .dummy-block-15 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.5);
-        }
-
-        .dummy-block-16 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.6);
-        }
-
-        .dummy-block-17 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.7);
-        }
-
-        .dummy-block-18 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.8);
-        }
-
-        .dummy-block-19 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 0.9);
-        }
-
-        .dummy-block-20 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 0, 0, 1);
-        }
-
-        .dummy-block-21 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.1);
-        }
-
-        .dummy-block-22 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.2);
-        }
-
-        .dummy-block-23 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.3);
-        }
-
-        .dummy-block-24 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.4);
-        }
-
-        .dummy-block-25 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.5);
-        }
-
-        .dummy-block-26 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.6);
-        }
-
-        .dummy-block-27 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.7);
-        }
-
-        .dummy-block-28 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.8);
-        }
-
-        .dummy-block-29 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 0.9);
-        }
-
-        .dummy-block-30 {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(0, 255, 0, 1);
-        }
-
-        /* Extra filler lines for demonstration (lines 201-500 already present above) */
     </style>
 </head>
 
@@ -596,19 +281,16 @@
     <!-- Introduction Paragraph -->
     <p>Even though you're studying MBBS, and I'm a programmer, our love is the perfect code. ❤️</p>
 
-    <!-- Animated Heart Icon -->
-    <div class="heart">❤️</div>
-
-    <!-- GIF for Programmer on the left -->
-    <div class="gif-programmer">
-        <img src="https://media0.giphy.com/media/lP8xu5t2DLGG045H8F/giphy.gif?cid=6c09b952tncr1txo2l2uoyko1n44rs44e90lc5lzpr3jyyk2&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s"
-            alt="Programmer GIF" style="width:120px; height:120px; object-fit:cover;">
-    </div>
-
-    <!-- GIF for Doctor on the right -->
-    <div class="gif-doctor">
-        <img src="https://cdn.pixabay.com/animation/2022/07/29/14/46/14-46-18-128_512.gif" alt="Doctor GIF"
-            style="width:120px; height:120px; object-fit:cover;">
+    <!-- Container holding the programmer GIF, heart icon, and doctor GIF -->
+    <div class="heart-gif-container">
+        <div class="gif-programmer">
+            <img src="https://media0.giphy.com/media/lP8xu5t2DLGG045H8F/giphy.gif?cid=6c09b952tncr1txo2l2uoyko1n44rs44e90lc5lzpr3jyyk2&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s"
+                alt="Programmer GIF" />
+        </div>
+        <div class="heart">❤️</div>
+        <div class="gif-doctor">
+            <img src="https://cdn.pixabay.com/animation/2022/07/29/14/46/14-46-18-128_512.gif" alt="Doctor GIF" />
+        </div>
     </div>
 
     <!-- Button to Reveal More Message -->
@@ -633,21 +315,11 @@
     <div class="fireworks"></div>
 
     <!-- Particle Background -->
-    <div class="particles">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <div class="particles"></div>
 
     <!-- Additional Content Container with Real Messages -->
-    <div class="content-wrapper">
+    <div class="content-wrapper"
+        style="width: 90%; max-width:800px; margin: 20px auto; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
         <p>
             Raveena, every moment with you feels like a beautiful dream. I still remember the day we met at Olive Tree
             in DC, where you dazzled me in your white outfit.
@@ -702,7 +374,7 @@
             heart.style.left = Math.random() * 100 + "vw";
             heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
             document.querySelector(".floating-hearts").appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
+            setTimeout(() => heart.remove(), 6000);
         }
         setInterval(createHeart, 500);
 
@@ -711,8 +383,8 @@
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement('span');
             particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
             particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
             particlesContainer.appendChild(particle);
         }
     </script>
